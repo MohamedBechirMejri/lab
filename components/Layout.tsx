@@ -17,9 +17,9 @@ const Layout = ({ children }: { children: any }) => {
         {tabs.map(tab => {
           return (
             <Link href={"/" + tab.link}>
-              <a
+              <div
                 key={uniqid()}
-                className="w-[10rem] h-[5rem] rounded bg-cover bg-no-repeat block shrink-0"
+                className="w-[10rem] h-[5rem] rounded bg-cover bg-no-repeat  shrink-0"
                 style={{
                   backgroundImage: `url(${tab.background})`,
                 }}
@@ -27,7 +27,7 @@ const Layout = ({ children }: { children: any }) => {
                 <h1 className="text-white font-semibold text-lg uppercase text-center backdrop-brightness-75 w-full h-full flex items-center justify-center hover:opacity-100 opacity-0 transition-all duration-300">
                   {tab.title}
                 </h1>
-              </a>
+              </div>
             </Link>
           );
         })}
