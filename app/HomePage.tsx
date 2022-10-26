@@ -101,7 +101,23 @@ const HomePage: NextPage = () => {
       <button
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
-        className="flex flex-col items-center justify-center bg-green-500 hover:bg-red-500 hover:after:bg-red-400 rounded-full h-48 w-48 shadow-xl after:[content:'Generate_random_Experiment!'] after:w-[inherit] after:h-[inherit] hover:after:[content:'and_destroy_the_world'] font-bold text-white uppercase transition-all after:bg-green-400 after:rounded-full after:-translate-y-6 after:flex after:flex-col after:items-center after:justify-center after:transition-all active:after:translate-y-0  border border-black"
+        className="
+        flex flex-col items-center justify-center
+        after:flex after:flex-col after:items-center after:justify-center
+
+        h-48 w-48 after:w-[inherit] after:h-[inherit]
+
+        bg-green-500 after:bg-green-400 hover:bg-red-500 hover:after:bg-red-400
+        border border-black
+
+        after:[content:'Generate_random_Experiment!']
+        hover:after:[content:'and_destroy_the_world']
+
+        font-bold text-white uppercase
+
+        transition-all after:transition-all rounded-full after:rounded-full shadow-xl
+
+        after:-translate-y-6 active:after:translate-y-0"
       ></button>
 
       <div className="deedee absolute bottom-8 right-8 flex items-center gap-4">
