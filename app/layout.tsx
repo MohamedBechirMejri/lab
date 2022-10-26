@@ -15,9 +15,8 @@ function RootLayout({ children }: any) {
       <nav className="bg-[#ffffff9a] fixed right-0 top-1/2 -translate-y-1/2 h-[70vh] hover:p-2 rounded backdrop-blur-3xl shadow ring-white ring translate-x-[93%] hover:translate-x-0 transition-all rounded-r-none flex flex-col items-center gap-4 duration-300 px-12 overflow-y-scroll noscroll border-2">
         {tabs.map(tab => {
           return (
-            <Link href={"/" + tab.link}>
+            <Link key={uniqid()} href={"/" + tab.link}>
               <div
-                key={uniqid()}
                 className="w-[10rem] h-[5rem] rounded bg-cover bg-no-repeat  shrink-0"
                 style={{
                   backgroundImage: `url(${tab.background})`,
