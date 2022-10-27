@@ -5,10 +5,16 @@ import { gsap } from "gsap"
 import { useEffect, useRef, useState } from "react"
 import { TextPlugin } from "gsap/TextPlugin"
 import Image from "next/image"
+import Link from "next/link"
 
 const HomePage: NextPage = () => {
+  const experiments = ["ugly_websites"]
   const indexRef = useRef(null)
   const [isAnimationComplete, setIsAnimationComplete] = useState(false)
+
+  const generateExperiment = () => {
+    return experiments[Math.floor(Math.random() * experiments.length)]
+  }
 
   const handleMouseEnter = () => {
     if (isAnimationComplete)
@@ -38,24 +44,6 @@ const HomePage: NextPage = () => {
 
     let ctx = gsap.context(() => {
       gsap.fromTo(
-        ".dexter img",
-        { x: "-150%" },
-        { x: 0, delay: 6, duration: 0.3 }
-      )
-      gsap.fromTo(
-        ".dexter h1",
-        {},
-        {
-          text: {
-            value: "Take you friend and get out of my Laboratory!",
-            delimiter: " ",
-          },
-          delay: 7,
-          duration: 1,
-          onComplete: () => setIsAnimationComplete(true),
-        }
-      )
-      gsap.fromTo(
         ".deedee img",
         { x: "150%" },
         { x: 0, delay: 1, duration: 0.3 }
@@ -74,8 +62,20 @@ const HomePage: NextPage = () => {
           delimiter: "  ",
         },
         delay: 4,
+      })
+      gsap.fromTo(
+        ".dexter img",
+        { x: "-150%" },
+        { x: 0, delay: 6, duration: 0.3 }
+      )
+      gsap.to(".dexter h1", {
+        text: {
+          value: "Take your friend and get out of my Laboratory!",
+          delimiter: " ",
+        },
+        delay: 6.5,
         duration: 1,
-        ease: "power2",
+        onComplete: () => setIsAnimationComplete(true),
       })
     }, indexRef)
 
@@ -95,13 +95,14 @@ const HomePage: NextPage = () => {
           height={200}
           id="dexterimg"
         />
-        <h1 className="text-4xl font-bold origin-left"></h1>
+        <h1 className="text-4xl font-bold origin-left text-[#ff4c02]"></h1>
       </div>
 
-      <button
-        onMouseEnter={handleMouseEnter}
-        onMouseLeave={handleMouseLeave}
-        className="
+      <Link href={"/" + generateExperiment()}>
+        <button
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
+          className="
         flex flex-col items-center justify-center
         after:flex after:flex-col after:items-center after:justify-center
 
@@ -118,10 +119,11 @@ const HomePage: NextPage = () => {
         transition-all after:transition-all rounded-full after:rounded-full shadow-xl
 
         after:-translate-y-6 active:after:translate-y-0"
-      ></button>
+        ></button>
+      </Link>
 
       <div className="deedee absolute bottom-8 right-8 flex items-center gap-4">
-        <h1 className="text-4xl font-bold origin-left"></h1>
+        <h1 className="text-4xl font-bold origin-left text-[#ef649b]"></h1>
         <Image
           src={"/images/deedee.png"}
           alt="DeeDee"
