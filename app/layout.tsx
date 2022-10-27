@@ -7,7 +7,7 @@ function RootLayout({ children }: any) {
     {
       title: "Ugly Websites",
       background: "https://picsum.photos/500/300",
-      link: "ugly_websites",
+      link: "ugly-websites",
     },
   ]
   return (

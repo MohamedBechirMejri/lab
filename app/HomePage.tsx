@@ -8,7 +8,7 @@ import Image from "next/image"
 import Link from "next/link"
 
 const HomePage: NextPage = () => {
-  const experiments = ["ugly_websites"]
+  const experiments = ["ugly-websites"]
   const indexRef = useRef(null)
   const [isAnimationComplete, setIsAnimationComplete] = useState(false)
 
