@@ -101,8 +101,10 @@ const Apkmirror = () => {
       <Banner />
       <Nav />
       <main className="w-full h-full bg-s;late-700 px-4 pb-16">
-        <div className="w-full h-12 bg-[#f76a1254] grid grid-cols-3 grid-rows-1 text-[#f76912] font-semibold text-center text-lg rounded-xl shadow-xl backdrop-blur-3xl">
-          <span className="flex items-center justify-center">For You</span>
+        <div className="w-full h-12 bg-[#f76a1254] grid grid-cols-3 grid-rows-1 text-[#f76912] font-semibold text-center text-lg rounded-xl shadow-xl backdrop-blur-3xl overflow-hidden">
+          <span className="flex items-center justify-center bg-[#ff860d] text-white">
+            For You
+          </span>
           <span className="flex items-center justify-center border-x">
             Latest
           </span>
