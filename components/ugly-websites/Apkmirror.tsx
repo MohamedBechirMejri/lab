@@ -4,14 +4,14 @@ import { useState } from "react"
 import Image from "next/image"
 
 const Apkmirror = () => {
-  const [isBannerVisible, setIsBannerVisible] = useState(false)
+  const [isBannerHidden, setIsBannerHidden] = useState(false)
 
   return (
     <div className="min-h-screen min-w-screen flex items-center">
       <div className="bg-[#f5f5f5] h-[85vh] w-[400px] relative rounded-xl shadow-2xl overflow-hidden border">
         <div
           className={`bg-[#f76912] w-[90%] h-max absolute left-1/2 top-8 -translate-x-1/2 rounded-lg text-[#f5f5f5] font-semibold flex items-center gap-4 overflow-hidden p-2 shadow-xl ${
-            isBannerVisible && "animate-hide-banner "
+            isBannerHidden && "animate-hide-banner "
           } `}
         >
           <Image
@@ -25,7 +25,7 @@ const Apkmirror = () => {
             Download APKMirror Installer (Official) to install .apkm bundles
           </h1>
           <span
-            onClick={() => setIsBannerVisible(true)}
+            onClick={() => setIsBannerHidden(true)}
             className="w-8 h-full shrink-0 cursor-pointer flex justify-center items-center "
           >
             <IoIosClose className="text-4xl" />
