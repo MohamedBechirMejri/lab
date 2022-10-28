@@ -96,24 +96,26 @@ const Apkmirror = () => {
 
   const [apps, setApps] = useState(forYou)
   return (
-    <div className="bg-[#f5f5f5] h-[85vh] w-[400px] relative rounded-xl shadow-2xl overflow-hidden border">
+    <div className="dark:text-[#f5f5f5] bg-[#f5f5f5] h-[85vh] w-[400px] relative rounded-xl shadow-2xl overflow-hidden border dark:bg-slate-800 select-none">
       <h1 className="w-full text-center p-4 font-bold text-xl">APKMirror</h1>
       <Banner />
       <Nav />
-      <main className="w-full h-full bg-s;late-700 px-4 pb-16">
-        <div className="w-full h-12 bg-[#f76a1254] grid grid-cols-3 grid-rows-1 text-[#f76912] font-semibold text-center text-lg rounded-xl shadow-xl backdrop-blur-3xl overflow-hidden">
-          <span className="flex items-center justify-center bg-[#ff860d] text-white">
+      <main className="w-full h-full px-4 pb-16">
+        <div className="w-full h-12 bg-[#f76a1254] grid grid-cols-3 grid-rows-1 text-[#f76912] font-semibold text-center text-lg rounded-xl shadow-xl backdrop-blur-3xl overflow-hidden select-none">
+          <span className="flex items-center justify-center bg-[#ff860d] text-white cursor-pointer">
             For You
           </span>
-          <span className="flex items-center justify-center border-x">
+          <span className="flex items-center justify-center border-x cursor-pointer">
             Latest
           </span>
-          <span className="flex items-center justify-center">Popular</span>
+          <span className="flex items-center justify-center cursor-pointer">
+            Popular
+          </span>
         </div>
         <div className="overflow-y-scroll h-[85%] noscroll">
           <div className="p-2 py-8 flex flex-col gap-4">
             {apps.map(app => (
-              <div className="flex border shadow p-4 rounded-lg items-center gap-4 cursor-pointer select-none hover:ring-1 transition-all ring-current">
+              <div className="flex border shadow p-4 rounded-lg items-center gap-4 cursor-pointer select-none hover:ring-1 transition-all ring-current active:scale-95">
                 <img
                   src={app.logo}
                   width={40}
