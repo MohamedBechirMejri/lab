@@ -11,7 +11,9 @@ export default () => {
           to improve them
         </p>
       </section> */}
-      <Apkmirror />
+      <section className="min-h-screen min-w-screen flex items-center">
+        <Apkmirror />
+      </section>
     </div>
   )
 }
