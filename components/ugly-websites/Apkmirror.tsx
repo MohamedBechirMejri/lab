@@ -1,6 +1,7 @@
 import Banner from "./Apkmirror/Banner"
 import Nav from "./Apkmirror/Nav"
 import { useState } from "react"
+import uniqid from "uniqid"
 
 const Apkmirror = () => {
   const forYou = [
@@ -115,7 +116,10 @@ const Apkmirror = () => {
         <div className="overflow-y-scroll h-[85%] noscroll">
           <div className="p-2 py-8 flex flex-col gap-4">
             {apps.map(app => (
-              <div className="flex border shadow p-4 rounded-lg items-center gap-4 cursor-pointer select-none hover:ring-1 transition-all ring-current active:scale-95">
+              <div
+                className="flex border shadow p-4 rounded-lg items-center gap-4 cursor-pointer select-none hover:ring-1 transition-all ring-current active:scale-95"
+                key={uniqid()}
+              >
                 <img
                   src={app.logo}
                   width={40}
