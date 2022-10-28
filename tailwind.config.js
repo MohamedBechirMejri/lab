@@ -6,7 +6,23 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      animation: {
+        "hide-banner": "hideBanner .5s forwards",
+      },
+      keyframes: {
+        hideBanner: {
+          "50%": {
+            transform: "translate(-50%, 30%)",
+            opacity: 1,
+          },
+          "100%": {
+            transform: "translate(-50%, -150%)",
+            opacity: 0,
+          },
+        },
+      },
+    },
   },
   plugins: [],
 }
