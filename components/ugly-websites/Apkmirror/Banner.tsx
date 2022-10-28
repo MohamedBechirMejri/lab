@@ -7,9 +7,9 @@ const Banner = () => {
 
   return (
     <div
-      className={`bg-[#f76912] w-[90%] h-max absolute left-1/2 top-8 -translate-x-1/2 rounded-lg text-[#f5f5f5] font-semibold flex items-center gap-4 overflow-hidden p-2 shadow-xl ${
+      className={`bg-[#f76912] w-[90%] h-max absolute left-1/2 top-16 -translate-x-1/2 rounded-lg text-[#f5f5f5] font-semibold flex items-center gap-4 overflow-hidden p-2 shadow-xl ${
         isBannerHidden && "animate-hide-banner "
-      } cursor-pointer select-none`}
+      } cursor-pointer select-none z-10`}
     >
       <Image
         src={"/images/apkmirror-logo.png"}
