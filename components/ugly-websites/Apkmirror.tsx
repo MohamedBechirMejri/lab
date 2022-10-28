@@ -12,7 +12,7 @@ const Apkmirror = () => {
         <div
           className={`bg-[#f76912] w-[90%] h-max absolute left-1/2 top-8 -translate-x-1/2 rounded-lg text-[#f5f5f5] font-semibold flex items-center gap-4 overflow-hidden p-2 shadow-xl ${
             isBannerHidden && "animate-hide-banner "
-          } `}
+          } cursor-pointer select-none`}
         >
           <Image
             src={"/images/apkmirror-logo.png"}
@@ -20,13 +20,14 @@ const Apkmirror = () => {
             height={50}
             alt="apkmirror logo"
             className=""
+            draggable="false"
           />
           <h1 className="text-sm">
             Download APKMirror Installer (Official) to install .apkm bundles
           </h1>
           <span
             onClick={() => setIsBannerHidden(true)}
-            className="w-8 h-full shrink-0 cursor-pointer flex justify-center items-center "
+            className="w-8 h-8 shrink-0 cursor-pointer flex justify-center items-center hover:bg-orange-400 rounded-full active:ring-1 transition-all ring-current"
           >
             <IoIosClose className="text-4xl" />
           </span>
