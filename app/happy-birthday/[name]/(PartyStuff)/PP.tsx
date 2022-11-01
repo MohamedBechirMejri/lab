@@ -4,7 +4,7 @@ const PP = ({ className }: { className?: string }) => {
   return (
     <Player
       src={"/lottiefiles/11272-party-popper.json"}
-      className={"absolute w-40 " + className}
+      className={className}
       autoplay
       loop
     />

@@ -7,6 +7,5 @@ export default ({
   params?: { name?: string };
   searchParams?: { date?: string };
 }) => {
-  console.log(new Date(searchParams!.date!).getTime());
-  return <HappyBirthday />;
+  return <HappyBirthday name={params!.name!} date={searchParams!.date!} />;
 };

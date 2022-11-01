@@ -4,9 +4,7 @@ const Balloon = ({ className }: { className?: string }) => {
   return (
     <Player
       src={"/lottiefiles/86274-red-balloon.json"}
-      className={
-        "absolute w-40 " + className
-      }
+      className={className}
       autoplay
       loop
     />

@@ -4,9 +4,7 @@ const Cake = ({ className }: { className?: string }) => {
   return (
     <Player
       src={"/lottiefiles/99495-happy-birthday.json"}
-      className={
-        "absolute w-40 " + className
-      }
+      className={className}
       autoplay
       loop
     />
