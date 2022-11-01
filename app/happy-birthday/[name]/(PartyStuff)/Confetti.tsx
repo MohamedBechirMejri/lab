@@ -4,7 +4,7 @@ const Confetti = ({ className }: { className?: string }) => {
   return (
     <Player
       src={"/lottiefiles/76411-confetti-effects-lottie-animation.json"}
-      className={"absolute w-40 " + className}
+      className={" w-40 " + className}
       autoplay
       loop
     />

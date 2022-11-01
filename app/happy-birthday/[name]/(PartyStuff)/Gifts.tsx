@@ -4,9 +4,7 @@ const Gifts = ({ className }: { className?: string }) => {
   return (
     <Player
       src={"/lottiefiles/89021-jumping-gift-boxes.json"}
-      className={
-        "absolute w-40 " + className
-      }
+      className={" w-40 " + className}
       autoplay
       loop
     />
