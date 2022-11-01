@@ -1,6 +1,6 @@
-import "../styles/globals.css"
-import Link from "next/link"
-import uniqid from "uniqid"
+import "../styles/globals.css";
+import Link from "next/link";
+import uniqid from "uniqid";
 
 function RootLayout({ children }: any) {
   const tabs = [
@@ -9,7 +9,12 @@ function RootLayout({ children }: any) {
       background: "https://picsum.photos/500/300",
       link: "ugly-websites",
     },
-  ]
+    {
+      title: "Happy Birthday",
+      background: "https://picsum.photos/500/400",
+      link: "happy-birthday",
+    },
+  ];
   return (
     <html lang="en">
       <head>
@@ -26,18 +31,18 @@ function RootLayout({ children }: any) {
                     backgroundImage: `url(${tab.background})`,
                   }}
                 >
-                  <h1 className="text-white font-semibold text-lg uppercase text-center backdrop-brightness-75 w-full h-full flex items-center justify-center hover:opacity-100 opacity-0 transition-all duration-300">
+                  <h1 className="flex items-center justify-center w-full h-full text-lg font-semibold text-center text-white uppercase transition-all duration-300 opacity-0 backdrop-brightness-75 hover:opacity-100">
                     {tab.title}
                   </h1>
                 </div>
               </Link>
-            )
+            );
           })}
         </nav>
         {children}
       </body>
     </html>
-  )
+  );
 }
 
-export default RootLayout
+export default RootLayout;

@@ -1,20 +1,20 @@
-"use client"
+"use client";
 
-import type { NextPage } from "next"
-import { gsap } from "gsap"
-import { useEffect, useRef, useState } from "react"
-import { TextPlugin } from "gsap/TextPlugin"
-import Image from "next/image"
-import Link from "next/link"
+import type { NextPage } from "next";
+import { gsap } from "gsap";
+import { useEffect, useRef, useState } from "react";
+import { TextPlugin } from "gsap/TextPlugin";
+import Image from "next/image";
+import Link from "next/link";
 
 const HomePage: NextPage = () => {
-  const experiments = ["ugly-websites"]
-  const indexRef = useRef(null)
-  const [isAnimationComplete, setIsAnimationComplete] = useState(false)
+  const experiments = ["ugly-websites", "happy-birthday"];
+  const indexRef = useRef(null);
+  const [isAnimationComplete, setIsAnimationComplete] = useState(false);
 
   const generateExperiment = () => {
-    return experiments[Math.floor(Math.random() * experiments.length)]
-  }
+    return experiments[Math.floor(Math.random() * experiments.length)];
+  };
 
   const handleMouseEnter = () => {
     if (isAnimationComplete)
@@ -24,9 +24,9 @@ const HomePage: NextPage = () => {
             value: "DeeDee Nooooooo!",
             delimiter: "  ",
           },
-        })
-      }, indexRef)
-  }
+        });
+      }, indexRef);
+  };
   const handleMouseLeave = () => {
     if (isAnimationComplete)
       gsap.context(() => {
@@ -35,19 +35,19 @@ const HomePage: NextPage = () => {
             value: "Phew, Thank God",
             delimiter: "  ",
           },
-        })
-      }, indexRef)
-  }
+        });
+      }, indexRef);
+  };
 
   useEffect(() => {
-    gsap.registerPlugin(TextPlugin)
+    gsap.registerPlugin(TextPlugin);
 
     let ctx = gsap.context(() => {
       gsap.fromTo(
         ".deedee img",
         { x: "150%" },
         { x: 0, delay: 1, duration: 0.3 }
-      )
+      );
       gsap.to(".deedee h1", {
         text: {
           value: " Oooooh!",
@@ -55,19 +55,19 @@ const HomePage: NextPage = () => {
         },
         delay: 2,
         duration: 0.3,
-      })
+      });
       gsap.to(".deedee h1", {
         text: {
           value: "What does this button do?",
           delimiter: "  ",
         },
         delay: 4,
-      })
+      });
       gsap.fromTo(
         ".dexter img",
         { x: "-150%" },
         { x: 0, delay: 6, duration: 0.3 }
-      )
+      );
       gsap.to(".dexter h1", {
         text: {
           value: "Take your friend and get out of my Laboratory!",
@@ -76,18 +76,18 @@ const HomePage: NextPage = () => {
         delay: 6.5,
         duration: 1,
         onComplete: () => setIsAnimationComplete(true),
-      })
-    }, indexRef)
+      });
+    }, indexRef);
 
-    return () => ctx.revert()
-  }, [])
+    return () => ctx.revert();
+  }, []);
 
   return (
     <div
       ref={indexRef}
-      className="bg-slate-100 flex flex-col items-center justify-center min-h-screen py-2"
+      className="flex flex-col items-center justify-center min-h-screen py-2 bg-slate-100"
     >
-      <div className="dexter absolute top-8 left-8 flex items-center gap-4">
+      <div className="absolute flex items-center gap-4 dexter top-8 left-8">
         <Image
           src={"/images/dexter.png"}
           alt="Dexter"
@@ -122,7 +122,7 @@ const HomePage: NextPage = () => {
         ></button>
       </Link>
 
-      <div className="deedee absolute bottom-8 right-8 flex items-center gap-4">
+      <div className="absolute flex items-center gap-4 deedee bottom-8 right-8">
         <h1 className="text-4xl font-bold origin-left text-[#ef649b]"></h1>
         <Image
           src={"/images/deedee.png"}
@@ -132,7 +132,7 @@ const HomePage: NextPage = () => {
         />
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default HomePage
+export default HomePage;
