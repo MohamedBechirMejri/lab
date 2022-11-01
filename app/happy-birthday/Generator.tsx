@@ -7,6 +7,8 @@ const Generator = () => {
   const [name, setName] = useState("");
   const [date, setDate] = useState("");
 
+  // TODO: rework date selector; only need month and day
+
   return (
     <div className="flex flex-col items-center justify-center w-screen h-screen">
       <label htmlFor="name" className="mb-2 text-left w-80">
