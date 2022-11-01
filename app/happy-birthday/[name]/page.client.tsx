@@ -1,6 +1,5 @@
 "use client";
 
-import { Player } from "@lottiefiles/react-lottie-player";
 import Flags from "./(PartyStuff)/Flags";
 import Confetti from "./(PartyStuff)/Confetti";
 import Gifts from "./(PartyStuff)/Gifts";
