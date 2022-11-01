@@ -4,9 +4,9 @@ export default ({
   params,
   searchParams,
 }: {
-  params: { name: string };
-  searchParams: { date: string };
+  params?: { name?: string };
+  searchParams?: { date?: string };
 }) => {
-  console.log(new Date(searchParams.date).getTime());
+  console.log(new Date(searchParams!.date!).getTime());
   return <HappyBirthday />;
 };
